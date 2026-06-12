@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: shadow-guard-backend
+    runtime: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && python main.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 8000
